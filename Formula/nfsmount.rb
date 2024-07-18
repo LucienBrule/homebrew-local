@@ -9,6 +9,14 @@ class Nfsmount < Formula
     bin.install "scripts/mount_nfs.sh"
   end
 
+  service do
+    run opt_bin/"mount_nfs.sh"
+    keep_alive false
+    run_at_load true
+    log_path "/tmp/nfsmount.log"
+    error_log_path "/tmp/nfsmount.error.log"
+  end
+
   def plist
     <<~EOS
       <?xml version="1.0" encoding="UTF-8"?>
