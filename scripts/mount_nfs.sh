@@ -8,7 +8,7 @@ log_message() {
 
 mount_nfs() {
     log_message "Attempting to mount NFS share"
-    if sudo mount -t nfs -o resvport,vers=3 192.168.1.10:/nfs/share /Users/lucienbrule/Developer/nfs; then
+    if sudo mount -t nfs -o noacl,rw,resvport,vers=3 192.168.1.10:/nfs/share /Users/lucienbrule/Developer/nfs; then
         log_message "NFS share mounted successfully"
     else
         log_message "Failed to mount NFS share"
