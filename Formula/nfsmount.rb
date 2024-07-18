@@ -28,12 +28,19 @@ class Nfsmount < Formula
         <string>#{plist_name}</string>
         <key>ProgramArguments</key>
         <array>
-          <string>#{bin}/mount_nfs.sh</string>
+          <string>/bin/bash</string>
+          <string>#{opt_bin}/mount_nfs.sh</string>
         </array>
         <key>RunAtLoad</key>
         <true/>
         <key>KeepAlive</key>
-        <false/>
+        <true/>
+        <key>WorkingDirectory</key>
+        <string>#{HOMEBREW_PREFIX}</string>
+        <key>StandardOutPath</key>
+        <string>/tmp/nfsmount.log</string>
+        <key>StandardErrorPath</key>
+        <string>/tmp/nfsmount.error.log</string>
       </dict>
       </plist>
     EOS
