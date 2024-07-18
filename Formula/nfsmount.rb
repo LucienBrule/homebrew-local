@@ -10,11 +10,12 @@ class Nfsmount < Formula
   end
 
   service do
-    run opt_bin/"mount_nfs.sh"
-    keep_alive false
+    run ["/bin/bash", opt_bin/"mount_nfs.sh"]
+    keep_alive true
     run_at_load true
     log_path "/tmp/nfsmount.log"
     error_log_path "/tmp/nfsmount.error.log"
+    working_dir HOMEBREW_PREFIX
   end
 
   def plist
