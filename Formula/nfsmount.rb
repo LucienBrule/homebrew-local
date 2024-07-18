@@ -1,7 +1,7 @@
 class Nfsmount < Formula
   desc "NFS mount service for specific share"
   homepage "https://github.com/LucienBrule/homebrew-local"
-  url "https://github.com/LucienBrule/homebrew-local/archive/refs/tags/v1.0.1.tar.gz"
+  url "https://github.com/LucienBrule/homebrew-local/archive/refs/tags/v1.0.3.tar.gz"
   sha256 "283974910b9b191a9f0246622f074300c46fd37198c0d019275fbb134f54baca"
   license "MIT"
 
